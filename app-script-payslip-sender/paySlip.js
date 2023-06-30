@@ -15,11 +15,11 @@ function sendEmail() {
 
   for (let i = 0; i < values.length; i++) {
     let status;
-    let [Name, Email, Salary] = values[i];
+    let [name, email, salary] = values[i];
     if (Email) {
       try {
-        let msg = buildBody(Name, Salary, month);
-        MailApp.sendEmail(Email, `Salary for ${Month} of June`, msg);
+        let msg = buildBody(name, salary, month);
+        MailApp.sendEmail(email, `Salary for month of ${month}`, msg);
         status = "success";
       } catch (err) {
         console.log(err);
